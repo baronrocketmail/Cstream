@@ -90,3 +90,17 @@ export async function uploadColumnVisibility(gridState){ return new Promise(func
         setDoc(doc(firestore, "websites/cybernetic stream/states", "ColumnVisibilityModel"),  { createdAt: serverTimestamp(), gridState: JSON.stringify(gridState)}).then(resolve("state updated"))
 })
 }
+
+export async function getInitialState(docID){
+    return new Promise(function(resolve, reject){
+        getDoc(doc(firestore, "websites/cybernetic stream/states", docID)).then(x => resolve((JSON.parse(x.data().gridState))))
+    })
+}
+
+
+
+export async function uploadGridStateObj(gridState, docName) {
+    return new Promise(function(resolve, reject) {
+        setDoc(doc(firestore, "websites/cybernetic stream/states",docName), {createdAt: serverTimestamp(), gridState: JSON.stringify(gridState)})
+    })
+}
