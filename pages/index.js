@@ -11,7 +11,7 @@ import {getFirestore, query, where, collection, getDocs , addDoc, serverTimestam
 export async function getStaticProps(){
     let initialPrimaryGridState = await getPrimaryGridInitialState()
     let data = await fetchAllUnits()
-//ddj
+
     return{
         props: {data, initialPrimaryGridState},
         revalidate: 1
