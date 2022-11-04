@@ -7,7 +7,7 @@ import {objectToRows,objectToColumns,getPaymentsDataset, objectToColumnsSecondar
 import { GridApi } from '@mui/x-data-grid-premium';
 import { initializeApp } from "firebase/app";
 import {getFirestore, query, where, collection, getDocs , addDoc, serverTimestamp, doc, updateDoc, setDoc, getDoc} from "firebase/firestore";
-
+//
 export async function getStaticProps(){
         let primaryGridAPIStateExport = await getInitialState("APIStateExport")
         let primaryColumnVisibilityModel = await getInitialState("ColumnVisibilityModel")
